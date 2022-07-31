@@ -1,14 +1,11 @@
 import Axios from 'axios';
+import { SdkCredentials } from '../interfaces';
 import { API_URL, ENDPOINT } from '../constants';
-
-interface Sdk {
-  applicationId: string;
-  apiKey: string;
-}
 
 export let appData: any;
 
-export const initSDK = async ({ applicationId, apiKey }: Sdk) => {
+export const initSDK = async (sdkCredentials: SdkCredentials) => {
+  const { applicationId, apiKey } = sdkCredentials;
   try {
     const axios = Axios.create({
       baseURL: API_URL,
