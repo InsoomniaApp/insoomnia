@@ -1,6 +1,6 @@
 {
   "name": "@insoomnia/node-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NodeJS SDK for Insoomnia authentication",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
