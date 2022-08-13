@@ -1,3 +1,4 @@
+import { BASE_URL } from '@insoomnia/core'
 import { NextFunction, Request, Response } from 'express';
 import { verify } from 'jsonwebtoken';
 import { appData } from '../sdk';
@@ -20,9 +21,9 @@ export const authMiddleware = (
     appData.secret,
     {
       audience: appData.audience,
-      issuer: 'http://localhost:8080',
+      issuer: BASE_URL,
     },
-    (err, data) => {
+    (err) => {
       console.log('err', err);
       if (err) {
         return res
